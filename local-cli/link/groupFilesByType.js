@@ -2,16 +2,6 @@ const groupBy = require('lodash').groupBy;
 const mime = require('mime');
 
 /**
- * Since there are no officially registered MIME types
- * for ttf/otf yet http://www.iana.org/assignments/media-types/media-types.xhtml,
- * we define two non-standard ones for the sake of parsing
- */
-mime.define({
-  'font/opentype': ['otf'],
-  'font/truetype': ['ttf'],
-});
-
-/**
  * Given an array of files, it groups it by it's type.
  * Type of the file is inferred from it's mimetype based on the extension
  * file ends up with. The returned value is an object with properties that
